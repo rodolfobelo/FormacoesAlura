@@ -22,8 +22,8 @@ def finalizar_app():
     print('Finalizando app!\n')
 
 def limpar_terminal():
-    # os.system('cls') #Windows
-    os.system('clear') #mac
+    os.system('cls') #Windows
+    # os.system('clear') #mac
 
 def voltar_main():
     input('Digite um tecla para voltar ao menu principal.\n')
