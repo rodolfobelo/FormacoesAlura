@@ -1,6 +1,9 @@
 import os
 
-restaurantes = ['Pizza', 'Sushi']
+restaurantes = [{'nome':'Praça', 'categoria':'Japonesa', 'ativo':False}, 
+                {'nome':'Pizza Suprema', 'categoria':'Pizza', 'ativo':True},
+                {'nome':'Cantina', 'categoria':'Italiano', 'ativo':True}
+                ]
 
 def exibir_nome_programa():
     print('''
@@ -37,15 +40,24 @@ def cadastrar_novo_restaurante(opcao_escolhida):
     limpar_terminal()
     print(f'A opção escolhida foi {opcao_escolhida}. Cadastrar restaurante!\n')
     nome_restaurante = input('Digite o nome do restaurante que você deseja cadastrar:\n')
-    restaurantes.append(nome_restaurante)
-    print(f'Seu restaurante {nome_restaurante}, foi cadastrado com sucesso.\n')
+    categoria_restaurante = input(f'Digite a categoria do restaurante {nome_restaurante}:\n')
+    ativo_restaurante = False
+    dados_restaurante = {'nome':nome_restaurante, 'categoria':categoria_restaurante, 'ativo':ativo_restaurante}
+    restaurantes.append(dados_restaurante)
+    print(f'Seu restaurante {nome_restaurante}, de categoria {categoria_restaurante} foi cadastrado com sucesso e se encontra desativado.\n')
     voltar_main()
 
 def listar_restaurante(opcao_escolhida):
     limpar_terminal()
     print(f'A opção escolhida foi {opcao_escolhida}. Listar restaurante!\nSegue lista de restaurante(s) cadastrado(s).')
     for restaurante in restaurantes:
-        print(f'. {restaurante}')
+        nome_restaurante      = restaurante['nome']
+        categoria_restaurante = restaurante['categoria']
+        ativo_restaurante     = restaurante['ativo']
+        if ativo_restaurante == True:
+            print(f'- {nome_restaurante} se encontra ativo!')
+        elif ativo_restaurante == False:
+            print(f'- {nome_restaurante} se encontra desativado!')
     voltar_main()
 
 
