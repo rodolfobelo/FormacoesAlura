@@ -60,6 +60,11 @@ def listar_restaurante(opcao_escolhida):
             print(f'- {nome_restaurante} se encontra desativado!')
     voltar_main()
 
+def alterar_estado_restaurante(opcao_escolhida):
+    limpar_terminal()
+    print(f'A opção escolhida foi: {opcao_escolhida}. Ativar restaurante!\n')
+
+    voltar_main()
 
 def escolher_opcao_app():
     try:
@@ -69,7 +74,7 @@ def escolher_opcao_app():
         elif opcao_escolhida == 2:
             listar_restaurante(opcao_escolhida)
         elif opcao_escolhida == 3:
-            print(f'A opção escolhida foi: {opcao_escolhida}. Ativar restaurante!\n')
+            alterar_estado_restaurante(opcao_escolhida)
         elif opcao_escolhida == 4:
             limpar_terminal()
             finalizar_app()
