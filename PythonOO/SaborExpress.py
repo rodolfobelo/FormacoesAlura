@@ -38,7 +38,7 @@ def opcao_invalida():
 
 def cadastrar_novo_restaurante():
     limpar_terminal()
-    print(f'A opção escolhida foi: Cadastrar restaurante!\n')
+    print(f'Cadastrar Restaurante!\n')
     nome_restaurante = input('Digite o nome do restaurante que você deseja cadastrar:\n')
     categoria_restaurante = input(f'Digite a categoria do restaurante {nome_restaurante}:\n')
     ativo_restaurante = False
@@ -49,15 +49,16 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurante():
     limpar_terminal()
-    print(f'A opção escolhida foi: Listar restaurante!\nSegue lista de restaurante(s) cadastrado(s).')
+    print(f'Restaurante(s) cadastrado(s)')
     for restaurante in restaurantes:
         nome_restaurante      = restaurante['nome']
         categoria_restaurante = restaurante['categoria']
-        ativo_restaurante     = restaurante['ativo']
-        if ativo_restaurante == True:
-            print(f'- {nome_restaurante} | ativo!')
-        elif ativo_restaurante == False:
-            print(f'- {nome_restaurante} | desativado!')
+        ativo_restaurante     = 'Ativo' if restaurante['ativo'] else 'Desativado'
+        print(f'- {nome_restaurante} | {categoria_restaurante} | {ativo_restaurante}')
+        # if ativo_restaurante == True:
+        #     print(f'- {nome_restaurante} | {categoria_restaurante} | ativo!')
+        # elif ativo_restaurante == False:
+        #     print(f'- {nome_restaurante} | {categoria_restaurante} | desativado!')
     voltar_main()
 
 def alternar_estado_restaurante():
