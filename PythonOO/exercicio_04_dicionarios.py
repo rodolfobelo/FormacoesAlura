@@ -1,27 +1,34 @@
 
 
 # 1 - Crie um dicionário representando informações sobre uma pessoa, como nome, idade e cidade.
-pessoas = [{'nome':'Rodolfo', 'idade':39, 'cidade':'maranguape'},
-          {'nome':'Yara', 'idade':39, 'cidade':'capital'},
-          {'nome':'José Igor', 'idade':7, 'cidade':'capital'},
-          {'nome':'Ícaro', 'idade':7, 'cidade':'capital'}
+pessoas = [{'nome':'Rodolfo', 'idade':39, 'cidade':'maranguape', 'profissao':''},
+          {'nome':'Yara', 'idade':39, 'cidade':'capital', 'profissao':''},
+          {'nome':'José Igor', 'idade':7, 'cidade':'capital', 'profissao':''},
+          {'nome':'Ícaro', 'idade':7, 'cidade':'capital', 'profissao':''}
           ]
 # 2 - Utilizando o dicionário criado no item 1:
 
 # Modifique o valor de um dos itens no dicionário (por exemplo, atualize a idade da pessoa);
 def lista_pessoas():
-    print('Nome'.ljust(20), '| Idade '.ljust(12), '| Cidade')
+    print('Nome'.ljust(20), '| Idade '.ljust(12), '| Cidade'.ljust(22), '| Profissâo')
+    print(len('Nome'.ljust(20) + '| Idade '.ljust(12) + '| Cidade'.ljust(20) + '| Profissâo'.ljust(20)) * '-')
     for pessoa in pessoas:
         nome = pessoa['nome']
         idade = pessoa['idade']
         cidade = pessoa['cidade']
-        print(f'{nome.ljust(20)} | {str(idade).ljust(10)} | {cidade}')
+        profissao = pessoa['profissao']
+        print(f'{nome.ljust(20)} | {str(idade).ljust(10)} | {cidade.ljust(20)} | {profissao}')
 
 def atualiza_idade(busca_nome, idade_atualizada):
+    i = 0
     for pessoa in pessoas:
         if busca_nome == pessoa['nome']:
             pessoa['idade'] = idade_atualizada
-    print(f'Idade atualizada para o {busca_nome}')
+            i = i + 1
+    if i > 0:
+        print(f'\nIdade atualizada para o {busca_nome}.\n')
+    else:
+        print(f'\nIdade não atualizada, o nome {busca_nome} não foi encontrado.\n')
     lista_pessoas()
 
 def main():
