@@ -7,7 +7,6 @@ class Restaurante:
         self._nome = nome.title()
         self.categoria = categoria.title()
         self._ativo = ativo
-        # self.nota = nota
         self._avaliacao = []
         self.capacidade = capacidade
         Restaurante.restaurantes.append(self)
@@ -28,3 +27,15 @@ class Restaurante:
     @property
     def ativo(self):
         return '✅' if self._ativo else '❎'
+
+    def receber_avaliacao(self, cliente, nota):
+        # avaliacao = Avaliacao(cliente, nota)
+        self._avaliacao.append(Avaliacao(cliente, nota))
+
+    def media_avaliacao(self):
+        if not self._avaliacao:
+            return 0
+        soma_notas = sum(avaliacao._nota for av in self._avaliacao)
+        quantidade_notas = len(self._avaliacao)
+        media = round(soma_notas / quantidade_notas, 1)
+        return media
