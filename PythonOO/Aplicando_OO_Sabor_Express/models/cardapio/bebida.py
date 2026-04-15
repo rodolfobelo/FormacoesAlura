@@ -6,7 +6,4 @@ class Bebida(ItemCardapio):
         self._tamanho = tamanho
     
     def __str__(self):
-        tam = len(f'{'Nome'.ljust(20)} | {'Preço'.ljust(20)} | {'Tamanho'}')
-        return f'{'Nome'.ljust(20)} | {'Preço'.ljust(20)} | {'Tamanho'}\n{tam * '*'}\n{self._nome.ljust(20)} | {str(self._preco).ljust(20)} | {self._tamanho}'
-                 
-        
+        return f'*****__Bebida__*****\n{'Nome'.ljust(20)} | {'Preço'.ljust(20)} | {'Tamanho'}\n{len(f'{'Nome'.ljust(20)} | {'Preço'.ljust(20)} | {'Tamanho'}') * '*'}\n{self._nome.ljust(20)} | {str(self._preco).ljust(20)} | {self._tamanho}'

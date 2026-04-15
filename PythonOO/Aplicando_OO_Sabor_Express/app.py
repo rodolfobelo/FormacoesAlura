@@ -21,6 +21,7 @@ prato_pao_alho = Prato('Pao de alho', 7.00, 'Pão carioquinha recheado com uma i
 def main():
     Restaurante.listar_restaurantes()
     print(bebida_suco)
+    print(prato_pao_alho)
     # pass
 
 if __name__ == '__main__':
