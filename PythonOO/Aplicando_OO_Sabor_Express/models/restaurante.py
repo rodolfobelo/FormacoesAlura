@@ -5,10 +5,11 @@ class Restaurante:
 
     def __init__(self, nome, categoria, capacidade=10, ativo=False):
         self._nome = nome.title()
-        self.categoria = categoria.title()
+        self.categoria = categoria.upper()
         self._ativo = ativo
-        self._avaliacao = []
         self.capacidade = capacidade
+        self._avaliacao = []
+        self._cardapio = []
         Restaurante.restaurantes.append(self)
 
     def __str__(self):
@@ -42,3 +43,9 @@ class Restaurante:
         quantidade_notas = len(self._avaliacao)
         media = round(soma_notas / quantidade_notas, 1)
         return media
+
+    def add_bebida_no_cardapio(self, bebida):
+        self._cardapio.append(bebida)
+
+    def add_prato_no_cardapio(self, prato):
+        self._cardapio.append(prato)
