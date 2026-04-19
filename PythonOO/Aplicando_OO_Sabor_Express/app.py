@@ -5,8 +5,8 @@ from models.cardapio.prato import Prato
 restaurante_coxinhas = Restaurante('Coxinhas Gourmet', 'Salgados', 1000)
 bebida_suco = Bebida('Suco de Melancia', 7.00, '500 ml')
 prato_pao_alho = Prato('Pao de alho', 7.00, 'Pão carioquinha com uma incrivel temperado de alho.')
-restaurante_coxinhas.add_bebida_no_cardapio(bebida_suco)
-restaurante_coxinhas.add_prato_no_cardapio(prato_pao_alho)
+restaurante_coxinhas.add_no_cardapio(bebida_suco)
+restaurante_coxinhas.add_no_cardapio(prato_pao_alho)
 # Restaurante.altera_situacao(restaurante_coxinhas)
 
 # restaurante_docinhos = Restaurante('Docinhos da Vovó', 'Doces')
