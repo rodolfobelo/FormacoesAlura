@@ -7,6 +7,8 @@ def main():
     if df is not None:
         banco = Controller_Planilha()
         banco.inserir_planilha(df)
+    
+        
 
 if __name__ == '__main__':
     main()
