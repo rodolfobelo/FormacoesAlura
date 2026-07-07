@@ -54,7 +54,7 @@ class Controller_Planilha:
 
         except Exception as erro:
             conexao.rollback()
-            print(f"Erro ao inserir dados: {erro}")
+            print(f"Erro ao inserir dados: ARQUIVO {pd.notna(linha["NOME_ARQUIVO"])} \n {erro}")
 
         finally:
             conexao.close()
